@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="TudnyLogger">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/TudnyLogger.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
