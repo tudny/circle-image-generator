@@ -8,11 +8,22 @@ public class Circle {
 	private static final Double DEFAULT_RADIUS = 1.0;
 	private static final Double DEFAULT_RADIUS_VELOCITY = 1.0;
 
+	public static Circle factorNewCircle(int x, int y, int color, ArrayList<Circle> circles){
+		Circle circle = new Circle(x, y, color);
+		for(Circle cir : circles){
+			if(cir != circle && cir.intersects(circle)){
+				return null;
+			}
+		}
+
+		return circle;
+	}
+
 	private Integer x;
 	private Integer y;
 	private Double radius = DEFAULT_RADIUS;
 	private Double radiusVelocity = DEFAULT_RADIUS_VELOCITY;
-	private Color color;
+	private int color;
 
 	public Integer getX() {
 		return x;
@@ -46,21 +57,21 @@ public class Circle {
 		this.radiusVelocity = radiusVelocity;
 	}
 
-	public Color getColor() {
+	public int getColor() {
 		return color;
 	}
 
-	public void setColor(Color color) {
+	public void setColor(int color) {
 		this.color = color;
 	}
 
-	public Circle(Integer x, Integer y, Color color) {
+	public Circle(Integer x, Integer y, int color) {
 		this.x = x;
 		this.y = y;
 		this.color = color;
 	}
 
-	private void update(ArrayList<Circle> circleArrayList) {
+	public void update(ArrayList<Circle> circleArrayList) {
 
 		for(Circle circle : circleArrayList){
 			if(this != circle && this.intersects(circle)){
@@ -71,7 +82,7 @@ public class Circle {
 		radius += radiusVelocity;
 
 		/*
-		Widzę, że ciekawość zżera. Czekam na wiadomość na messengerze z pytaniem, dlaczego owa klasa nie jest nigdzie użyta.
+		Widzę, że ciekawość zżera. Czekam na wiadomość na messengerze z pytaniami o kod inne bzdety np czemu mam ukryte wszystkie repo.
 		* */
 	}
 
@@ -82,5 +93,16 @@ public class Circle {
 		double dis = Math.sqrt(dx * dx + dy * dy);
 
 		return ( dis <= this.getRadius() + circle.getRadius() );
+	}
+
+	@Override
+	public String toString() {
+		return "Circle{" +
+				"x=" + x +
+				", y=" + y +
+				", radius=" + radius +
+				", radiusVelocity=" + radiusVelocity +
+				", color=" + color +
+				'}';
 	}
 }
