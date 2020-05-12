@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Circle {
 
 	private static final Double DEFAULT_RADIUS = 1.0;
-	private static final Double DEFAULT_RADIUS_VELOCITY = 1.0;
+	private static final Double DEFAULT_RADIUS_VELOCITY = 0.5;
 
 	public static Circle factorNewCircle(int x, int y, int color, ArrayList<Circle> circles){
 		Circle circle = new Circle(x, y, color);
@@ -92,7 +92,7 @@ public class Circle {
 
 		double dis = Math.sqrt(dx * dx + dy * dy);
 
-		return ( dis <= this.getRadius() + circle.getRadius() );
+		return ( dis <= this.getRadius() + circle.getRadius() + 1);
 	}
 
 	@Override
