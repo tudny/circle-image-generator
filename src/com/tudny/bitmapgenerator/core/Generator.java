@@ -1,11 +1,10 @@
 package com.tudny.bitmapgenerator.core;
 
-import com.tudny.bitmapgenerator.ProgressBarNoGui;
+import com.tudny.bitmapgenerator.core.tools.ProgressBar;
+import com.tudny.bitmapgenerator.core.tools.ProgressBarNoGui;
 import com.tudny.tudnylogger.Log;
 
 import javax.imageio.ImageIO;
-import javax.swing.*;
-import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -160,6 +159,7 @@ public class Generator {
 		progressBarNoGui.close();
 	}
 
+	@SuppressWarnings("unused")
 	private static void drawCircle(BufferedImage image, Circle cir) {
 		int radius = cir.getRadius().intValue();
 		int color = cir.getColor();

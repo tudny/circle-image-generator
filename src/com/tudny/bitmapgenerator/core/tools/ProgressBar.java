@@ -1,4 +1,4 @@
-package com.tudny.bitmapgenerator.core;
+package com.tudny.bitmapgenerator.core.tools;
 
 import com.sun.deploy.util.WinRegistry;
 

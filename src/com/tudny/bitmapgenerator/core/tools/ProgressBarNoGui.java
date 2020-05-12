@@ -1,4 +1,4 @@
-package com.tudny.bitmapgenerator;
+package com.tudny.bitmapgenerator.core.tools;
 
 import com.tudny.tudnylogger.Log;
 
