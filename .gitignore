@@ -1,2 +1,5 @@
 /out/production/
 *.class
+.idea/
+target/
+CircleImageGenerator.iml
